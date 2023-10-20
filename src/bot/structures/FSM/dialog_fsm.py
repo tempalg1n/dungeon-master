@@ -1,5 +1,6 @@
 from aiogram.fsm.state import StatesGroup, State
 
 
-class DialogSG(StatesGroup):
+class BasicSG(StatesGroup):
     greeting = State()
+    help = State()

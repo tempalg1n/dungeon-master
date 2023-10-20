@@ -1,10 +1,8 @@
 """This package is used for a bot logic implementation."""
-from src.bot.logic.dialogs.start import dialog_router
-from src.bot.logic.handlers.help import help_router
-from src.bot.logic.handlers.start import start_router
+from src.bot.logic.dialogs.basic_commands import basic_router_dialogs
+from src.bot.logic.handlers.basic import basic_router
 
 routers = (
-    start_router,
-    help_router,
-    dialog_router
+    basic_router,
+    basic_router_dialogs
 )
