@@ -40,6 +40,7 @@ class RegisterCheck(BaseMiddleware):
                 user_name=user.username,
                 first_name=user.first_name,
                 second_name=user.last_name,
+                language_code=user.language_code,
                 is_premium=user.is_premium,
                 role=Role.USER,
                 user_chat=chat_model

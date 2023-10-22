@@ -79,3 +79,15 @@ class UserRepo(Repository[User]):
         )
         await self.session.execute(stmt)
         await self.session.commit()
+
+    async def set_lang(self, lang_code: str, user_tg_id: int = None, user_id: int = None):
+        if user_tg_id:
+            stmt = update(User).where(User.user_id == user_tg_id).values(language_code=lang_code)
+        else:
+            stmt = update(User).where(User.id == user_id).values(language_code=lang_code)
+        await self.session.execute(stmt)
+        await self.session.commit()
+
+    async def get_many_by_ids(self, ids: list[int]):
+        stmt = select(User).where(User.id.in_(ids))
+        return [user for user in await self.session.scalars(stmt)]

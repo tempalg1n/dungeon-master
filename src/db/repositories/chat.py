@@ -42,3 +42,5 @@ class ChatRepo(Repository[Chat]):
     async def get_private_chats(self):
         stmt = select(Chat.chat_id).where(Chat.chat_type == 'private')
         return await self.session.scalars(stmt)
+
+

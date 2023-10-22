@@ -2,5 +2,9 @@
 from .base import Base
 from .chat import Chat
 from .user import User
+from .room import Room
+from .character import Character
 
-__all__ = ('Base', 'Chat', 'User')
+__all__ = ('Base', 'Chat', 'User', 'Room', 'Character')
+
+

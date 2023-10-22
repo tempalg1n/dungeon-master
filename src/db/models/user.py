@@ -8,8 +8,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from src.bot.structures.role import Role
 
-from .base import Base
-from .chat import Chat
+from . import Base, Chat
 
 
 class User(Base):
@@ -29,6 +28,9 @@ class User(Base):
     """ Telegram profile first name """
     second_name: Mapped[str] = mapped_column(
         sa.Text, unique=False, nullable=True
+    )
+    language_code: Mapped[str] = mapped_column(
+        sa.Text, unique=False, nullable=False, server_default='ru'
     )
     """ Telegram profile second name """
     is_premium: Mapped[bool] = mapped_column(

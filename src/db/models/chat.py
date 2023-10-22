@@ -5,7 +5,7 @@ import sqlalchemy as sa
 from sqlalchemy import DateTime, func
 from sqlalchemy.orm import Mapped, mapped_column
 
-from .base import Base
+from . import Base
 
 
 class Chat(Base):
